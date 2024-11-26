@@ -5,6 +5,7 @@ This is an interactive game where the program guesses your birthday based on a s
 
 ## Installation
 1. Clone the repository:
+    https://github.com/Johnalug99/Birthday-app.git
 
 2. Navigate to the project directory:
 
