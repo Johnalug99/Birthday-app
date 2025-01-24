@@ -20,21 +20,25 @@ def birthday_game():
         "16  17  18 19\n20  21  22 23\n24  25  26 27\n28  29  30 31"
     ]
     values = [1, 2, 4, 8, 16]
+    with st.form("birthday_form"):
+        for i, set_text in enumerate(birthday_sets):
+            if st.checkbox(f"Is your birthday in this set?\n\n{set_text}"):
+                day += values[i]
 
-    for i, set_text in enumerate(birthday_sets):
-        if st.checkbox(f"Is your birthday in this set?\n\n{set_text}"):
-            day += values[i]
-            if day > 0:
-                suffix = "th"
-                if day in [1, 21, 31]:
-                 suffix = "st"
-                elif day in [2, 22]:
-                 suffix = "nd"
-                elif day in [3, 23]:
-                 suffix = "rd"
-        st.success(f"Yippie! {name}Your birthday is on the {day}{suffix}!")
-        st.balloons()
-    else:
-        st.error("It seems you didn't select any options. Try again!")
+        submit_button = st.form_submit_button("Submit")
+
+    if submit_button:
+        if day > 0:
+            suffix = "th"
+            if day in [1, 21, 31]:
+                suffix = "st"
+            elif day in [2, 22]:
+                suffix = "nd"
+            elif day in [3, 23]:
+                suffix = "rd"
+            st.success(f"Yippie! {name}, Your birthday is on the {day}{suffix}!")
+            st.balloons()
+        else:
+            st.error("It seems you didn't select any options. Try again!")
 
 birthday_game()
