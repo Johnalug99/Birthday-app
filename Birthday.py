@@ -24,20 +24,6 @@ def birthday_game():
     for i, set_text in enumerate(birthday_sets):
         if st.checkbox(f"Is your birthday in this set?\n\n{set_text}"):
             day += values[i]
-<<<<<<< HEAD
-    if day > 0:
-        suffix = "th"
-        if day in [1,21,31]:
-             suffix = "st"
-        elif day in [2, 22]:
-             suffix = "nd"
-        elif day in [3, 23]:
-             suffix = "rd"
-        st.success(f"Yippie! Your birthday is on the {day}{suffix}!")
-    else:
-         st.error("It seems you didn't select any options. Try again!")
-birthday_game()
-=======
 
     if day > 0:
         suffix = "th"
@@ -53,4 +39,3 @@ birthday_game()
         st.error("It seems you didn't select any options. Try again!")
 
 birthday_game()
->>>>>>> fe795e0799ad14999ab3c0c58d1468fd86cd9c3c
