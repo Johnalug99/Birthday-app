@@ -24,16 +24,15 @@ def birthday_game():
     for i, set_text in enumerate(birthday_sets):
         if st.checkbox(f"Is your birthday in this set?\n\n{set_text}"):
             day += values[i]
-
-    if day > 0:
-        suffix = "th"
-        if day in [1, 21, 31]:
-            suffix = "st"
-        elif day in [2, 22]:
-            suffix = "nd"
-        elif day in [3, 23]:
-            suffix = "rd"
-        st.success(f"Yippie! Your birthday is on the {day}{suffix}!")
+            if day > 0:
+                suffix = "th"
+                if day in [1, 21, 31]:
+                 suffix = "st"
+                elif day in [2, 22]:
+                 suffix = "nd"
+                elif day in [3, 23]:
+                 suffix = "rd"
+        st.success(f"Yippie! {name}Your birthday is on the {day}{suffix}!")
         st.balloons()
     else:
         st.error("It seems you didn't select any options. Try again!")
